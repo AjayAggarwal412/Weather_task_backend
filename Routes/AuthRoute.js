@@ -6,7 +6,11 @@ router.post("/signup", Signup);
 
 router.post("/login", Login);
 
-router.post("/", userVerification);
+// router.post("/", userVerification);
+
+router.post("/home", userVerification, (req, res) => {
+  res.json({ message: "Welcome to your home page!" });
+});
 
 router.post("/logout", (req, res) => {
   res.clearCookie("token", { httpOnly: true, withCredentials: true });
