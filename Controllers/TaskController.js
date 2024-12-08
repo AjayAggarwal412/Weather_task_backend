@@ -67,30 +67,6 @@ module.exports.deleteTask = async (req, res) => {
   }
 };
 
-// Update Task Controller
-// module.exports.updateTask = async (req, res) => {
-//   const { title, description, status } = req.body;
-//   const taskId = req.params.id;
-
-//   try {
-//     // Find task by ID and update it
-//     const updatedTask = await Task.findByIdAndUpdate(
-//       taskId,
-//       { title, description, status },
-//       { new: true } // Return the updated document
-//     );
-
-//     if (!updatedTask) {
-//       return res.status(404).json({ message: "Task not found" });
-//     }
-
-//     res.status(200).json({ task: updatedTask });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: "Server error" });
-//   }
-// };
-
 module.exports.updateTask = async (req, res) => {
   const { title, description, status, city } = req.body; // Destructure the new city
   const taskId = req.params.id;
